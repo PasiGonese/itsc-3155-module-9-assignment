@@ -15,7 +15,11 @@ def index():
 @app.get('/movies')
 def list_all_movies():
     # TODO: Feature 1
-    return render_template('list_all_movies.html', list_movies_active=True)
+    list_movies = []
+    list_movies = movie_repository.get_all_movies()
+    # list_movies = ['yo','whatup','bro']
+    print(list_movies)
+    return render_template('list_all_movies.html', list_movies_active=True, list_movies=list_movies)
 
 
 @app.get('/movies/new')
