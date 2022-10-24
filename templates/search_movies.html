@@ -5,5 +5,39 @@
 {% block body %}
 <h1 class="mb-5">Search Movie Ratings</h1>
 <p class="mb-3">Search for a movie rating below</p>
-<!-- TODO: Feature 3 -->
+<form action="/movies/search" method="get">
+   <div>
+    <input name="search" type="text" placeholder="Enter a movie rating">
+    <h1> </h1>
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<p> </p>
+<p> </p>
+  <table class="table table-light">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Director</th>
+        <th scope="col">Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+      </tr>
+    </tbody>
+  </table>
 {% endblock %}
