@@ -18,7 +18,9 @@
         {% for i in list_movies %}
         <tr>
         <!-- <td>1</th> -->
-        <td>{{list_movies[i]}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.director}}</td>
+        <td>{{i.rating}}</td>
       </tr>
       {% endfor %}
     </tbody>

@@ -16,8 +16,12 @@ def index():
 def list_all_movies():
     # TODO: Feature 1
     list_movies = []
+    movie_repository.create_movie("Inception", "Chris Nolan", 5)
+    movie_repository.create_movie("Pulp Ficiton", "Quntin Tarantino", 4)
+    movie_repository.create_movie("The Shining", "Stanley Kubrick", 3)
     list_movies = movie_repository.get_all_movies()
     # list_movies = ['yo','whatup','bro']
+
     print(list_movies)
     return render_template('list_all_movies.html', list_movies_active=True, list_movies=list_movies)
 
