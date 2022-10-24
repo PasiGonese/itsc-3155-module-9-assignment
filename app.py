@@ -1,4 +1,5 @@
-from flask import Flask, redirect, render_template
+from turtle import title
+from flask import Flask, redirect, render_template, request
 
 from src.repositories.movie_repository import get_movie_repository
 
@@ -26,6 +27,10 @@ def create_movies_form():
 @app.post('/movies')
 def create_movie():
     # TODO: Feature 2
+    title = request.args.get("title")
+    director = request.args.get("director")
+    rating = request.args.get("rating")
+    movie_repository.create_movie(title, director, rating)
     # After creating the movie in the database, we redirect to the list all movies page
     return redirect('/movies')
 
