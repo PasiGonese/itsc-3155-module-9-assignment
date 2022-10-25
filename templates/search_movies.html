@@ -1,3 +1,7 @@
+from src.repository.movie_repository import create_movie
+
+movie_repository = get_movie_repository()
+
 {% extends '_layout.html' %}
 
 {% block title %}Movie Rating App | Search Movie Ratings{% endblock %}
@@ -5,5 +9,29 @@
 {% block body %}
 <h1 class="mb-5">Search Movie Ratings</h1>
 <p class="mb-3">Search for a movie rating below</p>
-<!-- TODO: Feature 3 -->
+<form action="/movies/search" method="get">
+   <div>
+    <input name="search" type="text" placeholder="Enter a movie rating">
+    <h1> </h1>
+   </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<p> </p>
+<p> </p>
+<table class="table table-light">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Director</th>
+      <th scope="col">Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{movie.title}}</th>
+      <td scope="row">{{movie.director}}</td>
+      <td scope="row">{{movie.rating}}</td>
+    </tr>
+  </tbody>
+</table>
 {% endblock %}
