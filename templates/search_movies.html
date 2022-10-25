@@ -1,3 +1,7 @@
+from src.repository.movie_repository import create_movie
+
+movie_repository = get_movie_repository()
+
 {% extends '_layout.html' %}
 
 {% block title %}Movie Rating App | Search Movie Ratings{% endblock %}
@@ -14,30 +18,20 @@
 </form>
 <p> </p>
 <p> </p>
-  <table class="table table-light">
-    <thead>
-      <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Director</th>
-        <th scope="col">Rating</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-      </tr>
-    </tbody>
-  </table>
+<table class="table table-light">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Director</th>
+      <th scope="col">Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{movie.title}}</th>
+      <td scope="row">{{movie.director}}</td>
+      <td scope="row">{{movie.rating}}</td>
+    </tr>
+  </tbody>
+</table>
 {% endblock %}
