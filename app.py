@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+from turtle import title
+>>>>>>> main
 from flask import Flask, redirect, render_template, request
 
 from src.repositories.movie_repository import get_movie_repository
@@ -14,8 +18,13 @@ def index():
 
 @app.get('/movies')
 def list_all_movies():
-    # TODO: Feature 1
-    return render_template('list_all_movies.html', list_movies_active=True)
+    # DONE: Feature 1
+    list_movies = []
+    # movie_repository.create_movie("Inception", "Chris Nolan", 5)
+    # movie_repository.create_movie("Pulp Ficiton", "Quntin Tarantino", 4)
+    # movie_repository.create_movie("The Shining", "Stanley Kubrick", 3)
+    list_movies = movie_repository.get_all_movies()
+    return render_template('list_all_movies.html', list_movies_active=True, list_movies=list_movies)
 
 
 @app.get('/movies/new')
@@ -26,6 +35,10 @@ def create_movies_form():
 @app.post('/movies')
 def create_movie():
     # TODO: Feature 2
+    title = request.args.get("title")
+    director = request.args.get("director")
+    rating = request.args.get("rating")
+    movie_repository.create_movie(title, director, rating)
     # After creating the movie in the database, we redirect to the list all movies page
     return redirect('/movies')
 
