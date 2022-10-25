@@ -16,5 +16,4 @@ def test_create_movies_rainy_day():
     assert "Star Trek" != movie1.title
     assert "James Cameron" != movie1.director
     assert b'10' != movie1.rating
-
     
